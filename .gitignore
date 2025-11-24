@@ -1,0 +1,100 @@
+## Build sonuçları
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Bb][Ii][Nn]/
+[Oo][Bb][Jj]/
+
+## User-specific (kişiye özel ayar dosyaları)
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+## Paketler / NuGet
+*.nupkg
+*.snupkg
+packages/
+# Eğer restore kullanıyorsan packages klasörünü ignore et
+# !packages/build/
+
+## Rider / VSCode / Visual Studio
+.vscode/
+.idea/
+*.sln.iml
+
+## Log Dosyaları
+*.log
+
+## Publish Output
+publish/
+app.publish/
+
+## Test çıktıları
+TestResult*/
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+## Cache
+*.cache
+*.tmp
+*.temp
+
+## Environment / Secrets
+.env
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+!appsettings.json  # Varsayılan dosya dahil olsun istersen
+
+## Azure / Hosting
+.csx/
+*.azurePubxml
+PublishProfiles/
+
+## Entity Framework
+Migrations/
+
+## OS Dosyaları
+.DS_Store
+Thumbs.db
+
+## SSL / Sertifika
+*.pfx
+*.p12
+
+## Docker
+docker-compose.override.yml
+
+## Generated files
+Generated/
+ServiceFabricBackup/
+Generated_Code/
+
+## Paket yöneticileri (opsiyonel)
+node_modules/
+bower_components/
+
+## Resharper / Rider
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## Coverage / Code Analysis
+coverage/
+*.coverage
+*.cov
+*.codecoverage
+
+## Temporary
+tmp/
+temp/
+
+.vs/
+
