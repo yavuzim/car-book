@@ -1,5 +1,6 @@
 ﻿using CarBook.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,21 @@ namespace CarBook.Persistence.Context
 {
     public class CarBookContext : DbContext
     {
+        private readonly IConfiguration _configuration;
+
+        public CarBookContext(DbContextOptions<CarBookContext> options, IConfiguration configuration)
+            : base(options)
+        {
+            _configuration = configuration;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-1L7P9M8;initial Catalog=CarBookDb;integrated Security=true;TrustServerCertificate=true");
+            if (!optionsBuilder.IsConfigured)
+            {
+                var connectionString = _configuration.GetConnectionString("DefaultConnection");
+                optionsBuilder.UseSqlServer(connectionString);
+            }
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Banner> Banners { get; set; }
