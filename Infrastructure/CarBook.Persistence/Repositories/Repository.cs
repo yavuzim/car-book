@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace CarBook.Persistence.Repositories
 {
-    public class Repositroy<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly CarBookContext _context;
 
-        public Repositroy(CarBookContext context)
+        public Repository(CarBookContext context)
         {
             _context = context;
         }
